@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Recipe {
   String name;
@@ -16,6 +17,40 @@ class BestRecipesWidget extends StatefulWidget {
 }
 
 class _BestRecipesWidgetState extends State<BestRecipesWidget> {
+
+  Widget _recipeItemWidget(index) {
+    return Container(
+      width: 120,
+      height: 180,
+      margin: const EdgeInsets.only(
+          right: 24.0, top: 12.0, bottom: 12.0),
+      child: InkWell(
+        onTap: () {
+
+        },
+        child: Container(
+          width: 120,
+          height: 180,
+          padding: const EdgeInsets.all(12.0),
+          alignment: Alignment.bottomLeft,
+          decoration: const BoxDecoration(
+            color: Color(0x887f7f7f),
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(5.0),
+            ),
+          ),
+          child: Text(
+            widget.recipeList[index].name,
+            style: const TextStyle(
+              color: const Color(0xffffffff),
+              fontSize: 18.0,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,27 +73,7 @@ class _BestRecipesWidgetState extends State<BestRecipesWidget> {
               scrollDirection: Axis.horizontal,
               physics: BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  width: 120,
-                  height: 180,
-                  padding: const EdgeInsets.all(12.0),
-                  alignment: Alignment.bottomLeft,
-                  margin: const EdgeInsets.only(
-                      right: 24.0, top: 12.0, bottom: 12.0),
-                  decoration: const BoxDecoration(
-                    color: Color(0xffc8c8c8),
-                    borderRadius: const BorderRadius.all(
-                      const Radius.circular(5.0),
-                    ),
-                  ),
-                  child: Text(
-                    widget.recipeList[index].name,
-                    style: const TextStyle(
-                      color: const Color(0xffffffff),
-                      fontSize: 18.0,
-                    ),
-                  ),
-                );
+                return _recipeItemWidget(index);
               },
             ),
           ),
