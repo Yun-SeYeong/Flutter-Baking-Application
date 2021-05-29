@@ -27,7 +27,7 @@ class _BestRecipesWidgetState extends State<BestRecipesWidget> {
               Text(
                 "BEST",
                 style: TextStyle(
-                  fontSize: 18.0,
+                  fontSize: 24.0,
                 ),
               ),
             ],
