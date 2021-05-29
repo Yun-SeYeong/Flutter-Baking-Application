@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_baking_application/pages/DashBoardPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +13,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: ThemeData(
         primaryColor: Color(0xff5600E8),
+        backgroundColor: Colors.white
       ),
       routes: {
-        '/': (context) => MyHomePage(title: 'Flutter Demo Home Page')
+        '/': (context) => DashBoardPage(),
       },
     );
   }
