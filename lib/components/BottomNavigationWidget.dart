@@ -28,7 +28,12 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             heightFactor: 0.4,
             child: FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  widget._currentIndex = 2;
+                  widget.onTap(widget._currentIndex);
+                });
+              },
               child: Icon(Icons.add),
               elevation: 0.1,
             ),
@@ -76,7 +81,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 2;
+                      widget._currentIndex = 3;
                       widget.onTap(widget._currentIndex);
                     });
                   },
@@ -89,7 +94,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 3;
+                      widget._currentIndex = 4;
                       widget.onTap(widget._currentIndex);
                     });
                   },
