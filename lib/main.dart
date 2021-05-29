@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'components/BestRecipesWidget.dart';
-
 void main() {
   runApp(MyApp());
 }
@@ -36,14 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: BestRecipesWidget(
-          recipeList: [
-            Recipe("test1"),
-            Recipe("test2"),
-            Recipe("test3"),
-          ],
-        )
-      ),
+        child: Text("test"),
+      )
     );
   }
 }
