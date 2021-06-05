@@ -5,6 +5,7 @@ class BottomNavigationWidget extends StatefulWidget {
   int _currentIndex = 0;
 
   ValueChanged onTap = (index) {};
+
   BottomNavigationWidget({required this.onTap});
 
   @override
@@ -48,7 +49,9 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   icon: Icon(
                     Icons.home_outlined,
                     size: widget._currentIndex == 0 ? 36 : 32,
-                    color: widget._currentIndex == 0 ? Theme.of(context).primaryColor : Colors.black,
+                    color: widget._currentIndex == 0
+                        ? Theme.of(context).primaryColor
+                        : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
@@ -61,7 +64,9 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   icon: Icon(
                     Icons.widgets_outlined,
                     size: widget._currentIndex == 1 ? 36 : 32,
-                    color: widget._currentIndex == 1 ? Theme.of(context).primaryColor : Colors.black,
+                    color: widget._currentIndex == 1
+                        ? Theme.of(context).primaryColor
+                        : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
@@ -77,11 +82,13 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   icon: Icon(
                     Icons.star_border_outlined,
                     size: widget._currentIndex == 2 ? 36 : 32,
-                    color: widget._currentIndex == 2 ? Theme.of(context).primaryColor : Colors.black,
+                    color: widget._currentIndex == 2
+                        ? Theme.of(context).primaryColor
+                        : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 3;
+                      widget._currentIndex = 2;
                       widget.onTap(widget._currentIndex);
                     });
                   },
@@ -90,11 +97,13 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   icon: Icon(
                     Icons.person_outline,
                     size: widget._currentIndex == 3 ? 36 : 32,
-                    color: widget._currentIndex == 3 ? Theme.of(context).primaryColor : Colors.black,
+                    color: widget._currentIndex == 3
+                        ? Theme.of(context).primaryColor
+                        : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 4;
+                      widget._currentIndex = 3;
                       widget.onTap(widget._currentIndex);
                     });
                   },
