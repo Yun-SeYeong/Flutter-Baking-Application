@@ -87,7 +87,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         ],
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 12.0),
+                        padding: EdgeInsets.only(top: 24.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -104,10 +104,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               child: Container(
                                 height: 48.0,
                                 width: 48.0,
-                                child: Icon(
-                                  Icons.access_alarms_sharp,
-                                  color: Colors.black,
-                                ),
+                                child: Image.asset("img/cookie.png"),
                               ),
                             ),
                             ElevatedButton(
@@ -123,10 +120,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               child: Container(
                                 height: 48.0,
                                 width: 48.0,
-                                child: Icon(
-                                  Icons.access_alarms_sharp,
-                                  color: Colors.black,
-                                ),
+                                child: Image.asset("img/bread.png"),
                               ),
                             ),
                             ElevatedButton(
@@ -142,10 +136,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               child: Container(
                                 height: 48.0,
                                 width: 48.0,
-                                child: Icon(
-                                  Icons.access_alarms_sharp,
-                                  color: Colors.black,
-                                ),
+                                child: Image.asset("img/birthday-cake.png"),
                               ),
                             ),
                             ElevatedButton(
@@ -161,10 +152,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               child: Container(
                                 height: 48.0,
                                 width: 48.0,
-                                child: Icon(
-                                  Icons.access_alarms_sharp,
-                                  color: Colors.black,
-                                ),
+                                child: Image.asset("img/pie.png"),
                               ),
                             ),
                           ],
