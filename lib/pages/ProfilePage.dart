@@ -25,7 +25,7 @@ class ProfilePageState extends State<ProfilePage> {
               children: [
                 Center(
                   child: const Text(
-                    "BAKING",
+                    "PROFILE",
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
