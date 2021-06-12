@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_baking_application/components/BestRecipesWidget.dart';
 import 'package:flutter_baking_application/components/BottomNavigationWidget.dart';
+import 'package:flutter_baking_application/pages/ProfilePage.dart';
 
 class DashBoardPage extends StatefulWidget {
   DashBoardPage({Key? key}) : super(key: key);
@@ -172,9 +173,34 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ),
             ],
           ),
+          Center(
+            child: Text("page2"),
+          ),
+          Center(
+            child: Text("page3"),
+          ),
+          ProfilePage(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationWidget(onTap: (index) {}),
+      bottomNavigationBar: BottomNavigationWidget(onTap: (index) {
+        final pageCurve = Curves.fastOutSlowIn;
+        final pageDuration = const Duration(milliseconds: 300);
+        print("index $index");
+        switch(index) {
+          case 0:
+            pageController.animateToPage(0, duration: pageDuration, curve: pageCurve);
+            break;
+          case 1:
+            pageController.animateToPage(1, duration: pageDuration, curve: pageCurve);
+            break;
+          case 2:
+            pageController.animateToPage(2, duration: pageDuration, curve: pageCurve);
+            break;
+          case 3:
+            pageController.animateToPage(3, duration: pageDuration, curve: pageCurve);
+            break;
+        }
+      }),
     );
   }
 }
