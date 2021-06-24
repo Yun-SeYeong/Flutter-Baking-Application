@@ -57,24 +57,24 @@ class MyProfileWidgetState extends State<StatefulWidget> {
                 Container(
                   margin: const EdgeInsets.only(top: 24.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Column(
                         children: [
                           Text("233", style: TextStyle(fontSize: 16.0),),
-                          Text("RECIPE", style: TextStyle(fontSize: 14.0),)
+                          Text("RECIPE", style: TextStyle(fontSize: 12.0),)
                         ],
                       ),
                       Column(
                         children: [
                           Text("233", style: TextStyle(fontSize: 16.0),),
-                          Text("RECIPE", style: TextStyle(fontSize: 16.0),)
+                          Text("LIKE", style: TextStyle(fontSize: 12.0),)
                         ],
                       ),
                       Column(
                         children: [
                           Text("233", style: TextStyle(fontSize: 16.0),),
-                          Text("RECIPE", style: TextStyle(fontSize: 16.0),)
+                          Text("STAR", style: TextStyle(fontSize: 12.0),)
                         ],
                       )
                     ],
