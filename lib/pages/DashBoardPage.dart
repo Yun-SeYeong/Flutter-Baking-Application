@@ -17,10 +17,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double _statusBarHeight = MediaQuery
-        .of(context)
-        .padding
-        .top;
+    final double _statusBarHeight = MediaQuery.of(context).padding.top;
+    final double _height = MediaQuery.of(context).size.height;
+    final double _titleHeight = 48.0;
+    final double _contentHeight = _height - _statusBarHeight - _titleHeight;
     return Scaffold(
       body: Stack(
         children: [
@@ -31,7 +31,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    height: 48.0,
+                    height: _titleHeight,
                     margin:
                     EdgeInsets.only(
                         top: _statusBarHeight, left: 32.0, right: 32.0),
@@ -51,9 +51,11 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     ),
                   ),
                   Container(
+                    height: _contentHeight,
                     padding: EdgeInsets.only(
-                        left: 32.0, right: 32.0, top: 36.0),
-                    child: Column(
+                        left: 32.0, right: 32.0),
+                    child: ListView(
+                      physics: BouncingScrollPhysics(),
                       children: [
                         ElevatedButton(
                           onPressed: () {},
@@ -189,7 +191,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               )
                             ],
                           ),
-                        )
+                        ),
+                        const SizedBox(
+                          height: 120.0,
+                        ),
                       ],
                     ),
                   ),
