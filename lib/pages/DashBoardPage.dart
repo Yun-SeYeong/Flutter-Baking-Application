@@ -207,28 +207,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
           ),
           Positioned(
             child: BottomNavigationWidget(
+              key: widget.key,
+              pageController: pageController,
               onTap: (index) {
-                final pageCurve = Curves.fastOutSlowIn;
-                final pageDuration = const Duration(milliseconds: 300);
-                print("index $index");
-                switch (index) {
-                  case 0:
-                    pageController.animateToPage(0,
-                        duration: pageDuration, curve: pageCurve);
-                    break;
-                  case 1:
-                    pageController.animateToPage(1,
-                        duration: pageDuration, curve: pageCurve);
-                    break;
-                  case 2:
-                    pageController.animateToPage(2,
-                        duration: pageDuration, curve: pageCurve);
-                    break;
-                  case 3:
-                    pageController.animateToPage(3,
-                        duration: pageDuration, curve: pageCurve);
-                    break;
-                }
               },
               onFloatingButtonClicked: () {
               },
