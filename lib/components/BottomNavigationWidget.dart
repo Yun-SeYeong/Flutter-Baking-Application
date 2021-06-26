@@ -2,24 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
-  int _currentIndex = 0;
 
-  ValueChanged onTap = (index) {};
-  Function() onFloatingButtonClicked = () {};
+  final ValueChanged onTap;
+  final Function() onFloatingButtonClicked;
+  final PageController pageController;
 
   BottomNavigationWidget({
+    Key? key,
     required this.onTap,
     required this.onFloatingButtonClicked,
-  });
+    required this.pageController,
+  }) : super(key: key);
 
   @override
   _BottomNavigationWidgetState createState() => _BottomNavigationWidgetState();
 }
 
 class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
+  final pageCurve = Curves.fastOutSlowIn;
+  final pageDuration = const Duration(milliseconds: 300);
+
+  void moveToPage(int index) {
+    widget.pageController.animateToPage(index,
+        duration: pageDuration, curve: pageCurve,);
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    widget.pageController.addListener(() {
+      setState(() {
+      });
+    });
     return Container(
       width: size.width,
       height: 80,
@@ -47,30 +61,28 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 IconButton(
                   icon: Icon(
                     Icons.home_outlined,
-                    size: widget._currentIndex == 0 ? 36 : 32,
-                    color: widget._currentIndex == 0
+                    size: widget.pageController.page == 0 ? 36 : 32,
+                    color: widget.pageController.page == 0
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 0;
-                      widget.onTap(widget._currentIndex);
+                      moveToPage(0);
                     });
                   },
                 ),
                 IconButton(
                   icon: Icon(
                     Icons.widgets_outlined,
-                    size: widget._currentIndex == 1 ? 36 : 32,
-                    color: widget._currentIndex == 1
+                    size: widget.pageController.page == 1 ? 36 : 32,
+                    color: widget.pageController.page == 1
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 1;
-                      widget.onTap(widget._currentIndex);
+                      moveToPage(1);
                     });
                   },
                 ),
@@ -80,30 +92,28 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 IconButton(
                   icon: Icon(
                     Icons.star_border_outlined,
-                    size: widget._currentIndex == 2 ? 36 : 32,
-                    color: widget._currentIndex == 2
+                    size: widget.pageController.page == 2 ? 36 : 32,
+                    color: widget.pageController.page == 2
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 2;
-                      widget.onTap(widget._currentIndex);
+                      moveToPage(2);
                     });
                   },
                 ),
                 IconButton(
                   icon: Icon(
                     Icons.person_outline,
-                    size: widget._currentIndex == 3 ? 36 : 32,
-                    color: widget._currentIndex == 3
+                    size: widget.pageController.page == 3 ? 36 : 32,
+                    color: widget.pageController.page == 3
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
                   onPressed: () {
                     setState(() {
-                      widget._currentIndex = 3;
-                      widget.onTap(widget._currentIndex);
+                      moveToPage(3);
                     });
                   },
                 ),
