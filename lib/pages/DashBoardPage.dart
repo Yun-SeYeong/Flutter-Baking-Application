@@ -11,9 +11,7 @@ class DashBoardPage extends StatefulWidget {
 }
 
 class _DashBoardPageState extends State<DashBoardPage> {
-  final PageController pageController = PageController(
-      initialPage: 0
-  );
+  final PageController pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +30,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 children: [
                   Container(
                     height: _titleHeight,
-                    margin:
-                    EdgeInsets.only(
+                    margin: EdgeInsets.only(
                         top: _statusBarHeight, left: 32.0, right: 32.0),
                     child: Stack(
                       children: [
@@ -52,15 +49,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   ),
                   Container(
                     height: _contentHeight,
-                    padding: EdgeInsets.only(
-                        left: 32.0, right: 32.0),
+                    padding: EdgeInsets.only(left: 32.0, right: 32.0),
                     child: ListView(
                       physics: BouncingScrollPhysics(),
                       children: [
                         ElevatedButton(
                           onPressed: () {},
                           style: ButtonStyle(backgroundColor:
-                          MaterialStateProperty.resolveWith((states) {
+                              MaterialStateProperty.resolveWith((states) {
                             return Colors.white;
                           })),
                           child: Container(
@@ -106,21 +102,21 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               Container(
                                 padding: EdgeInsets.only(top: 24.0),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     ElevatedButton(
                                       onPressed: () {},
                                       style: ButtonStyle(
                                         backgroundColor:
-                                        MaterialStateProperty.resolveWith((
-                                            states) {
+                                            MaterialStateProperty.resolveWith(
+                                                (states) {
                                           return Colors.white;
                                         }),
-                                        padding: MaterialStateProperty
-                                            .resolveWith(
+                                        padding:
+                                            MaterialStateProperty.resolveWith(
                                                 (states) =>
-                                                EdgeInsets.all(4.0)),
+                                                    EdgeInsets.all(4.0)),
                                       ),
                                       child: Container(
                                         height: 48.0,
@@ -132,14 +128,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       onPressed: () {},
                                       style: ButtonStyle(
                                         backgroundColor:
-                                        MaterialStateProperty.resolveWith((
-                                            states) {
+                                            MaterialStateProperty.resolveWith(
+                                                (states) {
                                           return Colors.white;
                                         }),
-                                        padding: MaterialStateProperty
-                                            .resolveWith(
+                                        padding:
+                                            MaterialStateProperty.resolveWith(
                                                 (states) =>
-                                                EdgeInsets.all(4.0)),
+                                                    EdgeInsets.all(4.0)),
                                       ),
                                       child: Container(
                                         height: 48.0,
@@ -151,14 +147,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       onPressed: () {},
                                       style: ButtonStyle(
                                         backgroundColor:
-                                        MaterialStateProperty.resolveWith((
-                                            states) {
+                                            MaterialStateProperty.resolveWith(
+                                                (states) {
                                           return Colors.white;
                                         }),
-                                        padding: MaterialStateProperty
-                                            .resolveWith(
+                                        padding:
+                                            MaterialStateProperty.resolveWith(
                                                 (states) =>
-                                                EdgeInsets.all(4.0)),
+                                                    EdgeInsets.all(4.0)),
                                       ),
                                       child: Container(
                                         height: 48.0,
@@ -171,14 +167,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                                       onPressed: () {},
                                       style: ButtonStyle(
                                         backgroundColor:
-                                        MaterialStateProperty.resolveWith((
-                                            states) {
+                                            MaterialStateProperty.resolveWith(
+                                                (states) {
                                           return Colors.white;
                                         }),
-                                        padding: MaterialStateProperty
-                                            .resolveWith(
+                                        padding:
+                                            MaterialStateProperty.resolveWith(
                                                 (states) =>
-                                                EdgeInsets.all(4.0)),
+                                                    EdgeInsets.all(4.0)),
                                       ),
                                       child: Container(
                                         height: 48.0,
@@ -209,29 +205,36 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ProfilePage(),
             ],
           ),
-          Positioned(child: BottomNavigationWidget(onTap: (index) {
-            final pageCurve = Curves.fastOutSlowIn;
-            final pageDuration = const Duration(milliseconds: 300);
-            print("index $index");
-            switch (index) {
-              case 0:
-                pageController.animateToPage(
-                    0, duration: pageDuration, curve: pageCurve);
-                break;
-              case 1:
-                pageController.animateToPage(
-                    1, duration: pageDuration, curve: pageCurve);
-                break;
-              case 2:
-                pageController.animateToPage(
-                    2, duration: pageDuration, curve: pageCurve);
-                break;
-              case 3:
-                pageController.animateToPage(
-                    3, duration: pageDuration, curve: pageCurve);
-                break;
-            }
-          }), bottom: 0.0,)
+          Positioned(
+            child: BottomNavigationWidget(
+              onTap: (index) {
+                final pageCurve = Curves.fastOutSlowIn;
+                final pageDuration = const Duration(milliseconds: 300);
+                print("index $index");
+                switch (index) {
+                  case 0:
+                    pageController.animateToPage(0,
+                        duration: pageDuration, curve: pageCurve);
+                    break;
+                  case 1:
+                    pageController.animateToPage(1,
+                        duration: pageDuration, curve: pageCurve);
+                    break;
+                  case 2:
+                    pageController.animateToPage(2,
+                        duration: pageDuration, curve: pageCurve);
+                    break;
+                  case 3:
+                    pageController.animateToPage(3,
+                        duration: pageDuration, curve: pageCurve);
+                    break;
+                }
+              },
+              onFloatingButtonClicked: () {
+              },
+            ),
+            bottom: 0.0,
+          )
         ],
       ),
     );
