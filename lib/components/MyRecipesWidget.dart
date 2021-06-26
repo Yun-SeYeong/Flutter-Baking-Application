@@ -11,6 +11,7 @@ class Recipe {
 
 class MyRecipesWidget extends StatefulWidget {
   List<Recipe> recipes;
+
   MyRecipesWidget({required this.recipes});
 
   @override
@@ -60,7 +61,7 @@ class MyRecipesWidgetState extends State<MyRecipesWidget> {
                         softWrap: true,
                         maxLines: 5,
                         overflow: TextOverflow.ellipsis,
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -73,7 +74,14 @@ class MyRecipesWidgetState extends State<MyRecipesWidget> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.favorite),
+                Icon(
+                  Icons.favorite,
+                  size: 12.0,
+                  color: Colors.red,
+                ),
+                const SizedBox(
+                  width: 2.0,
+                ),
                 Text(recipe.heart),
               ],
             ),
