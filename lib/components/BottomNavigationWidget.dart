@@ -5,8 +5,12 @@ class BottomNavigationWidget extends StatefulWidget {
   int _currentIndex = 0;
 
   ValueChanged onTap = (index) {};
+  Function() onFloatingButtonClicked = () {};
 
-  BottomNavigationWidget({required this.onTap});
+  BottomNavigationWidget({
+    required this.onTap,
+    required this.onFloatingButtonClicked,
+  });
 
   @override
   _BottomNavigationWidgetState createState() => _BottomNavigationWidgetState();
@@ -29,12 +33,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             heightFactor: 0.4,
             child: FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
-              onPressed: () {
-                setState(() {
-                  widget._currentIndex = 2;
-                  widget.onTap(widget._currentIndex);
-                });
-              },
+              onPressed: widget.onFloatingButtonClicked,
               child: Icon(Icons.add),
               elevation: 0.1,
             ),
