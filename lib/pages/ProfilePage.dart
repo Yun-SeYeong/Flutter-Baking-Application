@@ -88,7 +88,9 @@ class ProfilePageState extends State<ProfilePage> {
                       ),
                       const SizedBox(height: 24.0),
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/login");
+                        },
                         child: Text("로그인"),
                         style: ButtonStyle(
                           backgroundColor:
