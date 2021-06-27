@@ -202,7 +202,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
               Center(
                 child: Text("page3"),
               ),
-              ProfilePage(),
+              ProfilePage(
+                isLogin: false,
+              ),
             ],
           ),
           Positioned(
