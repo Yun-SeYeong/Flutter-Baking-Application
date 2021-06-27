@@ -34,10 +34,6 @@ class ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.more_vert),
-                )
               ],
             ),
           ),
