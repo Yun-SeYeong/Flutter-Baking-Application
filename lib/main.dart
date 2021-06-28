@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_baking_application/pages/DashBoardPage.dart';
 import 'package:flutter_baking_application/pages/LoginPage.dart';
+import 'package:flutter_baking_application/pages/SignUpPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => DashBoardPage(),
         '/login': (context) => LoginPage(),
+        '/signup': (context) => SignUpPage(),
       },
     );
   }
