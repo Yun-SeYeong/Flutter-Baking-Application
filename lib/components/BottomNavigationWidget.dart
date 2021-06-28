@@ -61,11 +61,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 IconButton(
                   icon: Icon(
                     Icons.home_outlined,
-                    color: widget.pageController.page!.toInt() == 0
+                    color: (widget.pageController.page??0).round() == 0
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
-                  iconSize: widget.pageController.page!.toInt() == 0 ? 36 : 32,
+                  iconSize: (widget.pageController.page??0).round() == 0 ? 36 : 32,
                   onPressed: () {
                     setState(() {
                       moveToPage(0);
@@ -75,11 +75,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 IconButton(
                   icon: Icon(
                     Icons.widgets_outlined,
-                    color: widget.pageController.page!.toInt() == 1
+                    color: (widget.pageController.page??0).round() == 1
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
-                  iconSize: widget.pageController.page!.toInt() == 1 ? 36 : 32,
+                  iconSize: (widget.pageController.page??0).round() == 1 ? 36 : 32,
                   onPressed: () {
                     setState(() {
                       moveToPage(1);
@@ -92,11 +92,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 IconButton(
                   icon: Icon(
                     Icons.star_border_outlined,
-                    color: widget.pageController.page!.toInt() == 2
+                    color: (widget.pageController.page??0).round() == 2
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
-                  iconSize: widget.pageController.page!.toInt() == 2 ? 36 : 32,
+                  iconSize: (widget.pageController.page??0).round() == 2 ? 36 : 32,
                   onPressed: () {
                     setState(() {
                       moveToPage(2);
@@ -106,11 +106,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 IconButton(
                   icon: Icon(
                     Icons.person_outline,
-                    color: widget.pageController.page!.toInt() == 3
+                    color: (widget.pageController.page??0).round() == 3
                         ? Theme.of(context).primaryColor
                         : Colors.black,
                   ),
-                  iconSize: widget.pageController.page!.toInt() == 3 ? 36 : 32,
+                  iconSize: (widget.pageController.page??0).round() == 3 ? 36 : 32,
                   alignment: Alignment.center,
                   onPressed: () {
                     setState(() {
