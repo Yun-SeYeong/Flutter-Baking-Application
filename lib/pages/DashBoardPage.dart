@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_baking_application/components/BestRecipesWidget.dart';
 import 'package:flutter_baking_application/components/BottomNavigationWidget.dart';
 import 'package:flutter_baking_application/pages/ProfilePage.dart';
+import 'package:flutter_baking_application/pages/StarPage.dart';
 
 class DashBoardPage extends StatefulWidget {
   DashBoardPage({Key? key}) : super(key: key);
@@ -199,8 +200,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
               Center(
                 child: Text("page2"),
               ),
-              Center(
-                child: Text("page3"),
+              StarPage(
+                bakers: [
+                  Baker("ysy1", "2323"),
+                  Baker("ysy2", "2324"),
+                  Baker("ysy3", "2325"),
+                  Baker("ysy3", "2325"),
+                  Baker("ysy3", "2325"),
+                ],
               ),
               ProfilePage(
                 isLogin: false,
