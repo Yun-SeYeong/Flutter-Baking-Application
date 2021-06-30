@@ -1,9 +1,14 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_baking_application/api/RestClient.dart';
 import 'package:flutter_baking_application/pages/DashBoardPage.dart';
 import 'package:flutter_baking_application/pages/LoginPage.dart';
 import 'package:flutter_baking_application/pages/SignUpPage.dart';
 
 void main() {
+  final client = RestClient(Dio());
+
+  client.getTasks().then((value) => print(value));
   runApp(MyApp());
 }
 
