@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_baking_application/components/MyProfileWidget.dart';
 import 'package:flutter_baking_application/components/MyRecipesWidget.dart';
 
 class ProfilePage extends StatefulWidget {
+  final auth = FirebaseAuth.instance;
+
   ProfilePage({Key? key, required this.isLogin}) : super(key: key);
 
   bool isLogin = false;
@@ -13,12 +16,17 @@ class ProfilePage extends StatefulWidget {
 }
 
 class ProfilePageState extends State<ProfilePage> {
+
+
   @override
   Widget build(BuildContext context) {
     final double _statusBarHeight = MediaQuery.of(context).padding.top;
     final double _height = MediaQuery.of(context).size.height;
     final double _titleHeight = 48.0;
     final double _contentHeight = _height - _statusBarHeight - _titleHeight;
+
+
+
     return Scaffold(
       body: Column(
         children: [
@@ -124,5 +132,16 @@ class ProfilePageState extends State<ProfilePage> {
         ],
       ),
     );
+  }
+
+  @override
+  void didUpdateWidget(Widget oldWidget) {
+    widget.auth.onAuthStateChanged.first.then((value) {
+      print("changed");
+      print(value.email);
+      setState(() {
+        widget.isLogin = true;
+      });
+    });
   }
 }
