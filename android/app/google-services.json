@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "841814315229",
+    "project_id": "baking-application-fc5c2",
+    "storage_bucket": "baking-application-fc5c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841814315229:android:5c4018f500aff4863a4b34",
+        "android_client_info": {
+          "package_name": "com.example.flutter_baking_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841814315229-p76h0m4em5ur03lvv0rklb7u8v547r56.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_baking_application",
+            "certificate_hash": "962c50a87a2fd13dc0ef361b0b7114e4a22e2a3c"
+          }
+        },
+        {
+          "client_id": "841814315229-j41a8obrbc3clrugpuorf72huml9covq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe_-mXJf10e24ktAFilN1ps7OJKy5in8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841814315229-j41a8obrbc3clrugpuorf72huml9covq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
