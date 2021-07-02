@@ -1,12 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatefulWidget {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
   @override
   LoginPageState createState() => LoginPageState();
 }
 
 class LoginPageState extends State<LoginPage> {
+  final _idTextController = TextEditingController();
+  final _passwordTextController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final double _statusBarHeight = MediaQuery.of(context).padding.top;
@@ -49,36 +55,38 @@ class LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("BAKING",
-                    style: TextStyle(
-                      fontSize: 48,
-                      color: Colors.black54
-                    ),)
+                    Text(
+                      "BAKING",
+                      style: TextStyle(fontSize: 48, color: Colors.black54),
+                    )
                   ],
                 ),
                 SizedBox(
                   height: 48.0,
                 ),
                 TextField(
+                  controller: _idTextController,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "ID",
-                    labelStyle: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 12.0,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: Theme.of(context).primaryColor),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: Theme.of(context).primaryColor),
-                    )
-                  ),
+                      border: OutlineInputBorder(),
+                      labelText: "ID",
+                      labelStyle: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 12.0,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Theme.of(context).primaryColor),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Theme.of(context).primaryColor),
+                      )),
                 ),
                 SizedBox(
                   height: 18.0,
                 ),
                 TextField(
+                  controller: _passwordTextController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: "Password",
@@ -87,35 +95,43 @@ class LoginPageState extends State<LoginPage> {
                         fontSize: 12.0,
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Theme.of(context).primaryColor),
+                        borderSide: BorderSide(
+                            width: 1, color: Theme.of(context).primaryColor),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Theme.of(context).primaryColor),
-                      )
-                  ),
+                        borderSide: BorderSide(
+                            width: 1, color: Theme.of(context).primaryColor),
+                      )),
                 ),
                 SizedBox(
                   height: 24.0,
                 ),
                 OutlinedButton(
                   onPressed: () {
+                    widget.auth
+                        .signInWithEmailAndPassword(
+                            email: _idTextController.text,
+                            password: _passwordTextController.text)
+                        .then((value) {
+                          print(value.user.email);
+                          Navigator.pop(context);
+                        }).onError((error, stackTrace) {
+                          print(error);
+                        });
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("로그인")
-                    ],
+                    children: [Text("로그인")],
                   ),
                   style: ButtonStyle(
                     backgroundColor:
-                    MaterialStateProperty.resolveWith((states) {
+                        MaterialStateProperty.resolveWith((states) {
                       return Theme.of(context).primaryColor;
                     }),
                     foregroundColor:
-                    MaterialStateProperty.resolveWith((states) {
+                        MaterialStateProperty.resolveWith((states) {
                       return Colors.white;
                     }),
-
                   ),
                 ),
                 SizedBox(
@@ -124,12 +140,16 @@ class LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    OutlinedButton(onPressed: () {}, child: Container(
-                      child: Icon(Icons.login),
-                    )),
-                    OutlinedButton(onPressed: () {}, child: Container(
-                      child: Icon(Icons.login),
-                    ))
+                    OutlinedButton(
+                        onPressed: () {},
+                        child: Container(
+                          child: Icon(Icons.login),
+                        )),
+                    OutlinedButton(
+                        onPressed: () {},
+                        child: Container(
+                          child: Icon(Icons.login),
+                        ))
                   ],
                 ),
                 TextButton(
