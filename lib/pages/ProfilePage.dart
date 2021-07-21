@@ -25,8 +25,6 @@ class ProfilePageState extends State<ProfilePage> {
     final double _titleHeight = 48.0;
     final double _contentHeight = _height - _statusBarHeight - _titleHeight;
 
-
-
     return Scaffold(
       body: Column(
         children: [
@@ -53,7 +51,14 @@ class ProfilePageState extends State<ProfilePage> {
               child: ListView(
                 physics: BouncingScrollPhysics(),
                 children: [
-                  MyProfileWidget(),
+                  MyProfileWidget(
+                    onLogoutClicked: () {
+                      setState(() {
+                        widget.auth.signOut();
+                        widget.isLogin = false;
+                      });
+                    },
+                  ),
                   SizedBox(
                     height: 28.0,
                   ),
@@ -138,10 +143,16 @@ class ProfilePageState extends State<ProfilePage> {
   void didUpdateWidget(Widget oldWidget) {
     widget.auth.onAuthStateChanged.first.then((value) {
       print("changed");
-      print(value.email);
-      setState(() {
-        widget.isLogin = true;
-      });
+      if (value != null && !value.isAnonymous) {
+        print(value.email);
+        setState(() {
+          widget.isLogin = true;
+        });
+      } else {
+        setState(() {
+          widget.isLogin = false;
+        });
+      }
     });
   }
 }
