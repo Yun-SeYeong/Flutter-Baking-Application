@@ -2,11 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyProfileWidget extends StatefulWidget {
+  final Function() onLogoutClicked;
+  MyProfileWidget({required this.onLogoutClicked});
+
   @override
   State<StatefulWidget> createState() => MyProfileWidgetState();
+
 }
 
-class MyProfileWidgetState extends State<StatefulWidget> {
+class MyProfileWidgetState extends State<MyProfileWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +30,7 @@ class MyProfileWidgetState extends State<StatefulWidget> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.exit_to_app))
+              IconButton(onPressed: widget.onLogoutClicked, icon: Icon(Icons.exit_to_app))
             ],
           ),
           Container(
