@@ -221,6 +221,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               onTap: (index) {
               },
               onFloatingButtonClicked: () {
+                Navigator.pushNamed(context, '/create_recipe_info');
               },
             ),
             bottom: 0.0,
