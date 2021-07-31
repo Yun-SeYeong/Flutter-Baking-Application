@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_baking_application/api/RestClient.dart';
+import 'package:flutter_baking_application/pages/CreateRecipeDetailPage.dart';
 import 'package:flutter_baking_application/pages/CreateRecipeInfoPage.dart';
 import 'package:flutter_baking_application/pages/DashBoardPage.dart';
 import 'package:flutter_baking_application/pages/LoginPage.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/signup': (context) => SignUpPage(),
         '/create_recipe_info': (context) => CreateRecipeInfoPage(),
+        '/create_recipe_detail': (context) => CreateRecipeDetailPage(),
       },
     );
   }

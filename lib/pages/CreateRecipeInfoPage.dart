@@ -151,7 +151,9 @@ class CreateRecipeInfoPageState extends State<CreateRecipeInfoPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/create_recipe_detail');
+                        },
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
