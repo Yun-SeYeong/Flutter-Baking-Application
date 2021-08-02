@@ -46,6 +46,7 @@ class CreateRecipeDetailPageState extends State<CreateRecipeDetailPage> {
               child: Center(
                 child: OutlinedButton(
                   onPressed: () {
+                    Navigator.pop(context);
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
