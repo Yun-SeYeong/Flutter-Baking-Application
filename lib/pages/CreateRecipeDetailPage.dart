@@ -34,7 +34,9 @@ class CreateRecipeDetailPageState extends State<CreateRecipeDetailPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(Icons.arrow_back_ios),
                   )
                 ],
