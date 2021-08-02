@@ -43,7 +43,9 @@ class CreateRecipeInfoPageState extends State<CreateRecipeInfoPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(Icons.arrow_back_ios),
                   )
                 ],
