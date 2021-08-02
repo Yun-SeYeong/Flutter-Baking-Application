@@ -34,7 +34,9 @@ class CreateRecipeDetailPageState extends State<CreateRecipeDetailPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(Icons.arrow_back_ios),
                   )
                 ],
@@ -46,7 +48,6 @@ class CreateRecipeDetailPageState extends State<CreateRecipeDetailPage> {
               child: Center(
                 child: OutlinedButton(
                   onPressed: () {
-                    Navigator.pop(context);
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
